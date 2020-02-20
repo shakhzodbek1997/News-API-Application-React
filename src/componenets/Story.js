@@ -26,8 +26,7 @@ export const Story = ({storyId}) => {
                     <StoryMetaElement color="green">Posted:</StoryMetaElement>{` `}
                     {mapTime(story.time)}
                 </span>
-           </StoryMeta>
-
+            </StoryMeta>
         </StoryWrapper>
     ) : null;
 };
