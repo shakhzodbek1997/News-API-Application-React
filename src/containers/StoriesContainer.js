@@ -12,7 +12,8 @@ export const StoriesContainer = () => {
     useEffect(() => {
         console.log('count',  count);
         getStoryIds().then(data => setStoryIds(data));
-    }, [count]);
+        console.log('count', count)
+    }, []);
 
     return(
         <>
