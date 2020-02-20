@@ -7,7 +7,7 @@ export const storyUrl = `${baseUrl}item/`;
 export const getStory = async (storyId) => {
     const result = await axios
         .get(`${storyUrl + storyId}.json`)
-        .then(({data}) => data);
+        .then(({data}) => selectFields(data) );
 
     return result;
 };

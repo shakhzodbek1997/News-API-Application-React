@@ -1,14 +1,18 @@
 import React, {useEffect, useState} from "react";
-
-import {getStoryIds, getStory} from "../services/hnApi";
+import {getStoryIds} from "../services/hnApi";
+import {Story} from "../componenets/Story";
 
 export const StoriesContainer = () => {
-  const [storyIds, setStoryIds] = useState([]);
+    const [storyIds, setStoryIds] = useState([]);
 
-  useEffect(() =>{
-      getStoryIds().then(data => setStoryIds(data));
-      getStory(22373406).then(data => console.log(data))
-  }, []);
+    useEffect(() => {
+        getStoryIds().then(data => setStoryIds(data));
+    }, []);
 
-  return <p>{JSON.stringify(storyIds)}</p>;
+    return storyIds.map(storyId => (
+        <Story
+            storyId={storyId}
+            key={storyId}
+        />
+    ));
 };
